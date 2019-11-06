@@ -31,9 +31,7 @@ rtm.on("message", message => {
         rtm.sendMessage(replaceChar(msg), message.channel);
       });
     }
-  }
-
-  if (text.includes("점심")) {
+  } else if (text.includes("점심")) {
     if (text === "점심") {
       axios.get("http://dodam.b1nd.com/api/v1/meal/today").then(async res => {
         const { meal } = res.data.data;
@@ -50,9 +48,7 @@ rtm.on("message", message => {
         rtm.sendMessage(replaceChar(msg), message.channel);
       });
     }
-  }
-
-  if (text.includes("저녁")) {
+  } else if (text.includes("저녁")) {
     if (text === "저녁") {
       axios.get("http://dodam.b1nd.com/api/v1/meal/today").then(async res => {
         const { meal } = res.data.data;
@@ -69,9 +65,7 @@ rtm.on("message", message => {
         rtm.sendMessage(replaceChar(msg), message.channel);
       });
     }
-  }
-
-  if (text.includes("급식")) {
+  } else if (text.includes("급식")) {
     if (text === "급식") {
       axios.get("http://dodam.b1nd.com/api/v1/meal/today").then(res => {
         const { meal } = res.data.data;
@@ -89,13 +83,9 @@ rtm.on("message", message => {
         rtm.sendMessage(replaceChar(msg), message.channel);
       });
     }
-  }
-
-  if (text.includes("상희")) {
+  } else if (text.includes("상희")) {
     rtm.sendMessage("바보", message.channel);
-  }
-
-  if (text.includes("바보")) {
+  } else if (text.includes("바보")) {
     rtm.sendMessage("상희", message.channel);
   }
 });
