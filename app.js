@@ -16,7 +16,7 @@ rtm.on("message", message => {
 
   if (text.includes("아침")) {
     if (text === "아침") {
-      axios.get(`${apiServerPath}/today`).then(async res => {
+      axios.get(`${apiServerPath}/today`).then(res => {
         const { meal } = res.data.data;
         const msg = meal.breakfast.menu;
         rtm.sendMessage(replaceChar(msg), message.channel);
@@ -33,7 +33,7 @@ rtm.on("message", message => {
     }
   } else if (text.includes("점심")) {
     if (text === "점심") {
-      axios.get("http://dodam.b1nd.com/api/v1/meal/today").then(async res => {
+      axios.get("http://dodam.b1nd.com/api/v1/meal/today").then(res => {
         const { meal } = res.data.data;
         const msg = meal.lunch.menu;
         rtm.sendMessage(replaceChar(msg), message.channel);
@@ -50,7 +50,7 @@ rtm.on("message", message => {
     }
   } else if (text.includes("저녁")) {
     if (text === "저녁") {
-      axios.get("http://dodam.b1nd.com/api/v1/meal/today").then(async res => {
+      axios.get("http://dodam.b1nd.com/api/v1/meal/today").then(res => {
         const { meal } = res.data.data;
         const msg = meal.dinner.menu;
         rtm.sendMessage(replaceChar(msg), message.channel);
