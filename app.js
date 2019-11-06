@@ -2,7 +2,7 @@ const { RTMClient } = require("@slack/client");
 const axios = require("axios");
 const moment = require("moment");
 
-const botAPIToken = "{YOUR_API_TOKEN}";
+const botAPIToken = "xoxb-789560627607-815434324049-Q11xYWiySqERHmcZKQIfzIPb";
 const { apiServerPath } = require("./config");
 
 const token = process.env.SLACK_TOKEN || botAPIToken;
@@ -96,12 +96,13 @@ const dateOfMeal = (meal, date, type) => {
   if (!data.length) return "날짜 제대로 입력해요 ㅡㅡ";
   else if (!data[0].exists) return "급식이 업소용";
   else {
-    if (type === "아침") return data[0].breakfast;
-    else if (type === "점심") return data[0].lunch;
-    else if (type === "저녁") return data[0].dinner;
+    if (type === "아침") return `${date} 아침 \n` + data[0].breakfast;
+    else if (type === "점심") return `${date} 점심 \n` + data[0].lunch;
+    else if (type === "저녁") return `${date} 저녁 \n` + data[0].dinner;
     else if (type === "급식") {
       const msg =
-        `-----------아침----------- \n ${data[0].breakfast} \n\n` +
+        `${date} 급식 \n` +
+        `-----------아침----------- \n ${data[0].breakfast} \n` +
         `-----------점심----------- \n ${data[0].lunch} \n\n` +
         `-----------저녁----------- \n ${data[0].dinner}`;
       return msg;
