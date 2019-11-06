@@ -2,7 +2,7 @@ const { RTMClient } = require("@slack/client");
 const axios = require("axios");
 const moment = require("moment");
 
-const botAPIToken = "xoxb-789560627607-815434324049-Q11xYWiySqERHmcZKQIfzIPb";
+const botAPIToken = "{YOUR_API_TOKEN}";
 const { apiServerPath } = require("./config");
 
 const token = process.env.SLACK_TOKEN || botAPIToken;
@@ -102,7 +102,7 @@ const dateOfMeal = (meal, date, type) => {
     else if (type === "급식") {
       const msg =
         `${date} 급식 \n` +
-        `-----------아침----------- \n ${data[0].breakfast} \n` +
+        `-----------아침----------- \n ${data[0].breakfast} \n\n` +
         `-----------점심----------- \n ${data[0].lunch} \n\n` +
         `-----------저녁----------- \n ${data[0].dinner}`;
       return msg;
