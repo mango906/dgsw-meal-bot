@@ -97,6 +97,6 @@
 
 
 ## 오류
-![Image 10](/img/11.png)
+![Image 10](/img/err.png)
 
 <p style="opacity: 0.65">이렇게 예기치 않은 오류가 발생할 수 있어요. 많이 많이 찾아주세요.</p>
